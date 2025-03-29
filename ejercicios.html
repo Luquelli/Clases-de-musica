@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios - JLF Clases de Bajo Eléctrico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .exercises-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .exercise-section {
+            background: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .exercise-section h2 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Syncopate', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .exercise-section h3 {
+            color: #444;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .exercise-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .exercise-section ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .exercise-section ul li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .exercise-section ul li::before {
+            content: '•';
+            color: #32CD32;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .exercise-example {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #32CD32;
+        }
+
+        .exercise-note {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #ffc107;
+        }
+
+        .exercise-tip {
+            background: #d4edda;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #28a745;
+        }
+
+        .exercise-warning {
+            background: #f8d7da;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #dc3545;
+        }
+
+        .exercise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .exercise-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .exercise-card h4 {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .exercise-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .exercise-practice {
+            background: #e9ecef;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .exercise-practice h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .exercise-practice ol {
+            margin-left: 1.5rem;
+        }
+
+        .exercise-practice li {
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .exercise-resources {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .resource-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #32CD32;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .resource-link:hover {
+            background: #228B22;
+            transform: translateY(-2px);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            padding: 3rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-widget {
+            text-align: center;
+        }
+
+        .footer-widget h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-family: 'Syncopate', sans-serif;
+        }
+
+        .footer-widget ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-widget ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-widget ul li a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-widget ul li a:hover {
+            color: #32CD32;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>JLF CLASES DE BAJO ELÉCTRICO</h1>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="teoria.html">TEORÍA</a></li>
+                    <li><a href="ejercicios.html" class="active">EJERCICIOS</a></li>
+                    <li><a href="licks.html">LICKS</a></li>
+                    <li><a href="covers.html">COVERS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="exercises-container">
+        <!-- Técnica Básica -->
+        <section class="exercise-section">
+            <h2>Técnica Básica</h2>
+            
+            <h3>1. Posición y Postura</h3>
+            <p>La base de una buena técnica comienza con la postura correcta y la posición adecuada del instrumento.</p>
+            
+            <div class="exercise-example">
+                <h4>Elementos Fundamentales:</h4>
+                <ul>
+                    <li>Posición del bajo en relación al cuerpo</li>
+                    <li>Altura del instrumento</li>
+                    <li>Posición de las manos</li>
+                    <li>Postura de la espalda</li>
+                    <li>Posición de los dedos</li>
+                </ul>
+            </div>
+
+            <h3>2. Ejercicios de Digitación</h3>
+            <p>Los ejercicios de digitación son fundamentales para desarrollar la fuerza y la independencia de los dedos.</p>
+            
+            <div class="exercise-grid">
+                <div class="exercise-card">
+                    <h4>Ejercicios Básicos</h4>
+                    <ul>
+                        <li>Escala cromática</li>
+                        <li>Ejercicios de extensión</li>
+                        <li>Independencia de dedos</li>
+                        <li>Ejercicios de fuerza</li>
+                    </ul>
+                </div>
+                <div class="exercise-card">
+                    <h4>Ejercicios Avanzados</h4>
+                    <ul>
+                        <li>Patrones de tres dedos</li>
+                        <li>Ejercicios de saltos</li>
+                        <li>Combinaciones de dedos</li>
+                        <li>Ejercicios de velocidad</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exercise-note">
+                <strong>Nota importante:</strong> La práctica regular de estos ejercicios es fundamental para desarrollar una técnica sólida.
+            </div>
+        </section>
+
+        <!-- Técnicas Avanzadas -->
+        <section class="exercise-section">
+            <h2>Técnicas Avanzadas</h2>
+            
+            <h3>1. Slap Bass</h3>
+            <p>La técnica de slap es una de las más características del bajo eléctrico, especialmente en géneros como el funk y el rock.</p>
+            
+            <div class="exercise-example">
+                <h4>Elementos del Slap:</h4>
+                <ul>
+                    <li>Técnica de pulgar</li>
+                    <li>Técnica de pull</li>
+                    <li>Combinación de slap y pull</li>
+                    <li>Patrones rítmicos</li>
+                    <li>Ejercicios de velocidad</li>
+                </ul>
+            </div>
+
+            <h3>2. Tapping</h3>
+            <p>El tapping es una técnica avanzada que permite crear sonidos complejos y melodías rápidas.</p>
+            
+            <div class="exercise-tip">
+                <strong>Tip de Tapping:</strong> Comienza con ejercicios simples y aumenta gradualmente la complejidad.
+            </div>
+
+            <div class="exercise-grid">
+                <div class="exercise-card">
+                    <h4>Ejercicios de Tapping</h4>
+                    <ul>
+                        <li>Tapping básico</li>
+                        <li>Patrones de dos manos</li>
+                        <li>Ejercicios de arpegios</li>
+                        <li>Combinaciones rítmicas</li>
+                    </ul>
+                </div>
+                <div class="exercise-card">
+                    <h4>Ejercicios de Velocidad</h4>
+                    <ul>
+                        <li>Escalas en tapping</li>
+                        <li>Arpegios rápidos</li>
+                        <li>Patrones complejos</li>
+                        <li>Ejercicios de coordinación</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ejercicios de Ritmo -->
+        <section class="exercise-section">
+            <h2>Ejercicios de Ritmo</h2>
+            
+            <h3>1. Patrones Rítmicos</h3>
+            <p>El desarrollo del sentido rítmico es fundamental para cualquier bajista.</p>
+            
+            <div class="exercise-example">
+                <h4>Tipos de Patrones:</h4>
+                <ul>
+                    <li>Patrones básicos de rock</li>
+                    <li>Patrones de funk</li>
+                    <li>Patrones de jazz</li>
+                    <li>Patrones de reggae</li>
+                    <li>Patrones de metal</li>
+                </ul>
+            </div>
+
+            <h3>2. Ejercicios de Coordinación</h3>
+            <p>La coordinación entre ambas manos es esencial para una ejecución fluida.</p>
+            
+            <div class="exercise-practice">
+                <h3>Ejercicios de Práctica</h3>
+                <ol>
+                    <li>Ejercicios de sincronización</li>
+                    <li>Patrones de alternancia</li>
+                    <li>Ejercicios de independencia</li>
+                    <li>Práctica con metrónomo</li>
+                    <li>Ejercicios de groove</li>
+                </ol>
+            </div>
+
+            <div class="exercise-warning">
+                <strong>Importante:</strong> La práctica con metrónomo es fundamental para desarrollar un buen sentido del ritmo.
+            </div>
+        </section>
+
+        <!-- Recursos Adicionales -->
+        <section class="exercise-section">
+            <h2>Recursos Adicionales</h2>
+            <p>Para mejorar tu técnica, te recomendamos los siguientes recursos:</p>
+            
+            <div class="exercise-resources">
+                <a href="#" class="resource-link">Ejercicios de Escalas</a>
+                <a href="#" class="resource-link">Backing Tracks</a>
+                <a href="#" class="resource-link">Tutoriales de Técnica</a>
+                <a href="#" class="resource-link">Ejercicios de Ritmo</a>
+                <a href="#" class="resource-link">Ejercicios de Velocidad</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-widget">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>Email: julianluchellifassa@gmail.com</li>
+                    <li>Teléfono: +54 2804713889</li>
+                </ul>
+            </div>
+            <div class="footer-widget">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="teoria.html">Teoría</a></li>
+                    <li><a href="ejercicios.html">Ejercicios</a></li>
+                    <li><a href="licks.html">Licks</a></li>
+                    <li><a href="covers.html">Covers</a></li>
+                </ul>
+            </div>
+            <div class="footer-widget">
+                <h3>Síguenos</h3>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Julian Luchelli Fassa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoría Musical - JLF Clases de Bajo Eléctrico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+
+        .theory-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .theory-section {
+            background: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .theory-section h2 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Syncopate', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .theory-section h3 {
+            color: #444;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .theory-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .theory-section ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .theory-section ul li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .theory-section ul li::before {
+            content: '•';
+            color: #32CD32;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .theory-example {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #32CD32;
+        }
+
+        .theory-note {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #ffc107;
+        }
+
+        .theory-tip {
+            background: #d4edda;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #28a745;
+        }
+
+        .theory-warning {
+            background: #f8d7da;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #dc3545;
+        }
+
+        .theory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .theory-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .theory-card h4 {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .theory-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .theory-practice {
+            background: #e9ecef;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .theory-practice h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .theory-practice ol {
+            margin-left: 1.5rem;
+        }
+
+        .theory-practice li {
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .theory-resources {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .resource-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .resource-card h4 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .resource-card p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+        }
+
+        .resource-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(50, 205, 50, 0.8);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .resource-link:hover {
+            background: rgba(50, 205, 50, 1);
+            transform: translateY(-2px);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            padding: 3rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-widget {
+            text-align: center;
+        }
+
+        .footer-widget h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-family: 'Syncopate', sans-serif;
+        }
+
+        .footer-widget ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-widget ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-widget ul li a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-widget ul li a:hover {
+            color: #32CD32;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        .note {
+            transition: background-color 0.3s ease;
+        }
+        .interval {
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+        .note.highlighted {
+            background-color: #e8f5e9;
+        }
+
+        /* Estilos para el sidebar de navegación */
+        .nav-sidebar {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            width: 280px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(50, 205, 50, 0.1);
+        }
+
+        .nav-sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .nav-sidebar::-webkit-scrollbar-track {
+            background: rgba(50, 205, 50, 0.1);
+            border-radius: 3px;
+        }
+
+        .nav-sidebar::-webkit-scrollbar-thumb {
+            background: rgba(50, 205, 50, 0.3);
+            border-radius: 3px;
+        }
+
+        .nav-sidebar::-webkit-scrollbar-thumb:hover {
+            background: rgba(50, 205, 50, 0.5);
+        }
+
+        .nav-sidebar h3 {
+            color: #333;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid rgba(50, 205, 50, 0.3);
+            font-family: 'Syncopate', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .nav-sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-sidebar ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .nav-sidebar ul li a {
+            color: #555;
+            text-decoration: none;
+            display: block;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-sidebar ul li a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: #32CD32;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-sidebar ul li a:hover {
+            background: rgba(50, 205, 50, 0.1);
+            color: #32CD32;
+            padding-left: 1.5rem;
+        }
+
+        .nav-sidebar ul li a:hover::before {
+            transform: scaleY(1);
+        }
+
+        .nav-sidebar ul li a.active {
+            background: rgba(50, 205, 50, 0.15);
+            color: #32CD32;
+            font-weight: 500;
+            padding-left: 1.5rem;
+        }
+
+        .nav-sidebar ul li a.active::before {
+            transform: scaleY(1);
+        }
+
+        .nav-sidebar ul ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .nav-sidebar ul li.active > ul {
+            max-height: 500px; /* Ajustar según necesidad */
+        }
+
+        .nav-sidebar ul li.active > a {
+            background: rgba(50, 205, 50, 0.15);
+            color: #32CD32;
+            font-weight: 500;
+        }
+
+        /* Ajustar el contenedor principal para el sidebar */
+        .theory-container {
+            margin-left: 320px;
+            max-width: calc(100% - 340px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .nav-sidebar {
+                width: 240px;
+            }
+            .theory-container {
+                margin-left: 260px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-sidebar {
+                display: none;
+            }
+            .theory-container {
+                margin-left: 0;
+                max-width: 100%;
+            }
+        }
+
+        /* Animación de zoom suave para la imagen de fondo */
+        @keyframes subtleZoom {
+            0% {
+                transform: scale(1);
+                filter: brightness(1);
+            }
+            50% {
+                transform: scale(1.1);
+                filter: brightness(1.2);
+            }
+            100% {
+                transform: scale(1);
+                filter: brightness(1);
+            }
+        }
+
+        /* Eliminar todas las animaciones y estilos adicionales */
+        .library-section {
+            position: relative;
+            overflow: hidden;
+            margin: 2rem 0;
+            border-radius: 10px;
+            background: none !important;
+            box-shadow: none !important;
+            padding: 4rem 0;
+        }
+
+        .library-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: 0;
+            border-radius: 10px;
+        }
+
+        .library-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+            border-radius: 10px;
+        }
+
+        .library-section .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .library-section h2 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Syncopate', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .library-section p {
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .resource-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .resource-card h4 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .resource-card p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+        }
+
+        .resource-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(50, 205, 50, 0.8);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .resource-link:hover {
+            background: rgba(50, 205, 50, 1);
+            transform: translateY(-2px);
+        }
+
+        .theory-resources {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>JLF CLASES DE BAJO ELÉCTRICO</h1>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="teoria.html" class="active">TEORÍA</a></li>
+                    <li><a href="ejercicios.html">EJERCICIOS</a></li>
+                    <li><a href="licks.html">LICKS</a></li>
+                    <li><a href="covers.html">COVERS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sidebar de navegación -->
+    <nav class="nav-sidebar">
+        <h3>Contenido</h3>
+        <ul>
+            <li><a href="#fundamentos">Fundamentos de la Armonía</a>
+                <ul>
+                    <li><a href="#intervalos">1. Intervalos y Escalas</a></li>
+                    <li><a href="#acordes">2. Acordes y Progresiones</a></li>
+                </ul>
+            </li>
+            <li><a href="#armonia-avanzada">Armonía Avanzada</a>
+                <ul>
+                    <li><a href="#modos">1. Modos y Escalas Modales</a></li>
+                    <li><a href="#reharmonizacion">2. Sustituciones y Reharmonización</a></li>
+                    <li><a href="#dominantes-secundarias">3. Dominantes Secundarias</a></li>
+                    <li><a href="#sustitucion-tritonal">4. Sustitución Tritonal</a></li>
+                    <li><a href="#backdoor-dominante">5. Backdoor Dominante</a></li>
+                    <li><a href="#coltrane-changes">6. Coltrane Changes</a></li>
+                    <li><a href="#intercambio-modal">7. Intercambio Modal</a></li>
+                    <li><a href="#sustituciones-disminuidas">8. Sustituciones Disminuidas</a></li>
+                </ul>
+            </li>
+            <li><a href="#improvisacion">Improvisación y Análisis</a>
+                <ul>
+                    <li><a href="#standards">1. Análisis de Standards</a></li>
+                    <li><a href="#tecnicas">2. Técnicas de Improvisación</a></li>
+                </ul>
+            </li>
+            <li><a href="#recursos">Recursos Adicionales</a>
+                <ul>
+                    <li><a href="#partituras">1. Partituras de Standards</a></li>
+                    <li><a href="#backing-tracks">2. Backing Tracks</a></li>
+                    <li><a href="#ejercicios-escalas">3. Ejercicios de Escalas</a></li>
+                    <li><a href="#progresiones">4. Progresiones Armónicas</a></li>
+                    <li><a href="#teoria-avanzada">5. Teoría Musical Avanzada</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="theory-container">
+        <!-- Fundamentos de la Armonía -->
+        <section class="theory-section" id="fundamentos">
+            <h2>Fundamentos de la Armonía</h2>
+            
+            <h3 id="intervalos">1. Intervalos y Escalas</h3>
+            <p>En el ámbito musical, se define intervalo como la diferencia en altura entre dos sonidos ya sean sucesivos (intervalos melódicos) o simultáneos (intervalos armónicos). 
+            En la música occidental el intervalo o distancia más pequeña posible entre dos sonidos es el semitono. El tono se forma uniendo dos semitonos pero también es considerado como un intervalo simple.</p>
+            <p>En instrumentos con trastes como la guitarra o el bajo, la diferencia entre dos trastes consecutivos en la misma cuerda es de un semitono. El siguiente diagrama muestra la posición relativa de los intervalos en un bajo con afinación estándar.</p>
+            
+            <div class="theory-example">
+                <div style="display: flex; gap: 12rem; align-items: center;">
+                    <div>
+                <h4>Intervalos Básicos:</h4>
+                <ul>
+                            <li>Unísono (R) (0)</li>
+                            <li>Segunda menor (2m) (1/2 T)</li>
+                            <li>Segunda mayor (2M) (1 T)</li>
+                            <li>Tercera menor (3m) (1 T + 1/2 T)</li>
+                            <li>Tercera mayor (3M) (2 T)</li>
+                            <li>Cuarta justa (4) (2 T + 1/2 T)</li>
+                            <li>Cuarta aumentada (4+) (3 T)</li>
+                            <li>Quinta disminuida (°5) (3 T)</li>
+                            <li>Quinta justa (5) (3 T + 1/2 T)</li>
+                            <li>Quinta aumentada (5+) (4 T)</li>
+                            <li>Sexta menor (6m) (4 T)</li>
+                            <li>Sexta mayor (6M) (4 T + 1/2 T)</li>
+                            <li>Séptima menor (7b) (5 T)</li>
+                            <li>Séptima mayor (7M) (5 T + 1/2 T)</li>
+                            <li>Octava (8) (6 T)</li>
+                </ul>
+                    </div>
+                    <div style="display: flex; justify-content: flex-end; align-items: center;">
+                        <img src="imagenes/intervalos.png" alt="Diagrama de intervalos en el bajo" style="max-width: 100%; height: auto;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="theory-example">
+                <h4>La Escala de Do (C) Mayor:</h4>
+                <p>La escala de Do mayor es la escala más sencilla para aprender teoría musical ya que no contiene alteraciones. Sus notas son:</p>
+                <div style="text-align: center; margin: 2rem 0;">
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin-top: 1rem;">
+                        <span class="note" style="padding: 0.5rem 1rem; background: #f0f0f0; border-radius: 5px;">C</span>
+                        <span class="interval" data-note1="C" data-note2="D" style="padding: 0.5rem; color: #666; margin-top: 1.5rem; cursor: pointer;">T</span>
+                        <span class="note" style="padding: 0.5rem 1rem; background: #f0f0f0; border-radius: 5px;">D</span>
+                        <span class="interval" data-note1="D" data-note2="E" style="padding: 0.5rem; color: #666; margin-top: 1.5rem; cursor: pointer;">T</span>
+                        <span class="note" style="padding: 0.5rem 1rem; background: #f0f0f0; border-radius: 5px;">E</span>
+                        <span class="interval" data-note1="E" data-note2="F" style="padding: 0.5rem; color: #666; margin-top: 1.5rem; cursor: pointer;">ST</span>
+                        <span class="note" style="padding: 0.5rem 1rem; background: #f0f0f0; border-radius: 5px;">F</span>
+                        <span class="interval" data-note1="F" data-note2="G" style="padding: 0.5rem; color: #666; margin-top: 1.5rem; cursor: pointer;">T</span>
+                        <span class="note" style="padding: 0.5rem 1rem; background: #f0f0f0; border-radius: 5px;">G</span>
+                        <span class="interval" data-note1="G" data-note2="A" style="padding: 0.5rem; color: #666; margin-top: 1.5rem; cursor: pointer;">T</span>
+                        <span class="note" style="padding: 0.5rem 1rem; background: #f0f0f0; border-radius: 5px;">A</span>
+                        <span class="interval" data-note1="A" data-note2="B" style="padding: 0.5rem; color: #666; margin-top: 1.5rem; cursor: pointer;">T</span>
+                        <span class="note" style="padding: 0.5rem 1rem; background: #f0f0f0; border-radius: 5px;">B</span>
+                        <span class="interval" data-note1="B" data-note2="C" style="padding: 0.5rem; color: #666; margin-top: 1.5rem; cursor: pointer;">ST</span>
+                        <span class="note" style="padding: 0.5rem 1rem; background: #f0f0f0; border-radius: 5px;">C</span>
+                    </div>
+                </div>
+                <div class="theory-tip">
+                    <strong>Tip:</strong> La fórmula de la escala mayor es: T - T - ST - T - T - T - ST (Tono - Tono - Semitono - Tono - Tono - Tono - Semitono)
+                </div>
+
+                <div class="theory-example" style="background: #f0f8ff; border-left-color: #1e90ff;">
+                    <h4>Bonus Data: Otras Escalas Importantes</h4>
+                    <p>Estas escalas se verán en detalle más adelante, pero es importante saber que existen y sus fórmulas:</p>
+                    <ul>
+                        <li><strong>Escala Menor Natural:</strong> T - ST - T - T - ST - T - T</li>
+                        <li><strong>Escala Menor Armónica:</strong> T - ST - T - T - ST - T+ST - ST</li>
+                        <li><strong>Escala Menor Melódica:</strong> T - ST - T - T - T - T - ST</li>
+                    </ul>
+                    <p>La escala menor armónica se diferencia de la natural por tener una séptima mayor, mientras que la escala menor melódica tiene tanto la sexta como la séptima mayor cuando se asciende, y vuelve a la forma natural al descender.</p>
+                </div>
+            </div>
+
+            <h3 id="acordes">2. Acordes y Progresiones</h3>
+            <p>Las progresiones de acordes son secuencias de dos o más acordes que forman la base armónica de una composición musical. Cada acorde en una progresión se representa mediante números romanos y se define en relación con una escala específica.</p>
+            
+            <p>Desde la música clásica hasta el rock moderno, las progresiones de acordes son el elemento fundamental que determina cómo evoluciona una pieza musical a lo largo del tiempo. Estas secuencias no solo establecen la estructura armónica, sino que también juegan un papel crucial en la narrativa musical de una canción.</p>
+            
+            <p>La elección de un acorde en un momento específico de la progresión puede transformar completamente el carácter de una composición, alterando su tono emocional de alegre a melancólico, o de luminoso a oscuro. Aunque un acorde individual (mayor, menor o disminuido) no tiene un significado narrativo por sí solo, las progresiones, incluso las más simples y repetitivas, tienen la capacidad de crear un rico tapiz de emociones y conceptos musicales.</p>
+            
+            <p>Una progresión armónica sólida sirve como cimiento sobre el cual se pueden construir otros elementos musicales, como melodías principales o líneas de bajo. Si estás comenzando a componer y no sabes por dónde empezar, las progresiones de acordes son el punto de partida ideal.</p>
+            
+            <p>Para quienes se inician en la composición o no tienen conocimientos previos de teoría musical, comprender las progresiones puede parecer desafiante. Sin embargo, con las herramientas adecuadas, este concepto se vuelve accesible y fundamental para el desarrollo musical.</p>
+            
+            <div class="theory-tip">
+                <strong>Tip:</strong> Los números romanos son una herramienta esencial para entender las relaciones entre acordes en una escala. Esta notación simplifica la comprensión de cómo funcionan los acordes en diferentes contextos musicales.
+            </div>
+            
+            <p>En la música, las escalas son conjuntos de notas organizadas según patrones específicos, siendo los más comunes las escalas mayor y menor. La buena noticia es que todas las escalas mayores y menores comparten la misma secuencia de acordes, lo que significa que solo necesitas memorizar dos patrones para comprender la mayoría de las progresiones.</p>
+            
+            <div class="theory-example">
+                <h4>Secuencia de Acordes en Escala Mayor:</h4>
+                <ul>
+                    <li>I - Tónica (mayor)</li>
+                    <li>ii - Supertónica (menor)</li>
+                    <li>iii - Mediante (menor)</li>
+                    <li>IV - Subdominante (mayor)</li>
+                    <li>V - Dominante (mayor)</li>
+                    <li>vi - Superdominante (menor)</li>
+                    <li>vii° - Sensible (disminuido)</li>
+                </ul>
+            </div>
+
+            <div class="theory-example">
+                <h4>Formación de Acordes en la Escala Mayor:</h4>
+                <p>Los acordes se forman superponiendo terceras sobre cada grado de la escala. Cada acorde está compuesto por tres notas. Para facilitar el aprendizaje, usaremos como ejemplo la escala de Do (C) mayor, que es la más sencilla para comprender la teoría musical ya que no contiene alteraciones (sostenidos o bemoles).</p>
+                
+                <div class="theory-tip">
+                    <strong>Tip:</strong> La escala de Do (C) mayor es el punto de partida ideal para aprender teoría musical porque:
+                    <ul>
+                        <li>No contiene alteraciones (sostenidos o bemoles)</li>
+                        <li>Sus notas son: C - D - E - F - G - A - B</li>
+                        <li>Es fácil de visualizar en el piano (solo teclas blancas)</li>
+                        <li>Sirve como base para entender otras escalas</li>
+                    </ul>
+                </div>
+
+                <p>En la escala de Do (C) mayor, los acordes se forman así:</p>
+                <ul>
+                    <li>I (Tónica) - C - E - G (C)</li>
+                    <li>ii (Supertónica) - D - F - A (Dm)</li>
+                    <li>iii (Mediante) - E - G - B (Em)</li>
+                    <li>IV (Subdominante) - F - A - C (F)</li>
+                    <li>V (Dominante) - G - B - D (G)</li>
+                    <li>vi (Superdominante) - A - C - E (Am)</li>
+                    <li>vii° (Sensible) - B - D - F (Bdim)</li>
+                </ul>
+
+                <div class="theory-tip">
+                    <strong>Tip:</strong> La secuencia de terceras que forma cada acorde determina si es mayor, menor o disminuido. En la escala de Do mayor:
+                    <ul>
+                        <li>Una tercera mayor (2 tonos) + quinta justa forma un acorde mayor (C, F, G)</li>
+                        <li>Una tercera menor (1 tono y medio) + quinta justa forma un acorde menor (Dm, Em, Am)</li>
+                        <li>Una tercera menor + quinta disminuida forma un acorde disminuido (Bdim)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="theory-note">
+                <strong>Nota importante:</strong> La comprensión de los intervalos y acordes es fundamental para desarrollar un oído musical y poder improvisar.
+            </div>
+        </section>
+
+        <!-- Armonía Avanzada -->
+        <section class="theory-section" id="armonia-avanzada">
+            <h2>Armonía Avanzada</h2>
+            
+            <div class="theory-example" id="modos">
+                <h4>1. Modos y Escalas Modales</h4>
+            <p>Los modos son variaciones de la escala mayor, cada uno con su propio carácter y sonoridad. Son fundamentales en la música jazz y moderna.</p>
+            <div class="theory-example">
+                <h4>Los Siete Modos de la Escala Mayor:</h4>
+                    <p>El "color" o sonoridad única de cada modo viene determinado por su nota característica. Esta nota debe estar presente tanto en la armonía como en la melodía para que el modo se perciba claramente.</p>
+                    <p>Usualmente, se suele enseñar que las escalas modales parten de la formula de tonos y semitonos de la escala mayor, pero empezando desde cada grado, y si bien esto no está mal, no ayuda a la comprensión de los modos en sí, a la hora de componer e improvisar. Es por eso que hay que saber cómo se forma cada acorde de cada grado de la escala, y conocer la nota característica del modo.</p>
+                    <ul>
+                        <li><strong>Jónico (Escala Mayor)</strong> - 1-2-3-4-5-6-7
+                            <ul>
+                                <li>Nota característica: 4 (cuarta justa)</li>
+                                <li>Se usa sobre: Imaj7</li>
+                                <li>Progresión ejemplo: Imaj7 - IVmaj7 - VIm7 - V7</li>
+                                <li>La cuarta justa en el IVmaj7 da el "color" mayor</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dórico</strong> - 1-2-♭3-4-5-6-♭7
+                            <ul>
+                                <li>Nota característica: 6 (sexta mayor)</li>
+                                <li>Se usa sobre: Im7</li>
+                                <li>Progresión ejemplo: Im7 - IV7 - VImaj7 - Im7</li>
+                                <li>La sexta mayor en el VImaj7 define el "color" dórico</li>
+                            </ul>
+                        </li>
+                        <li><strong>Frigio</strong> - 1-♭2-♭3-4-5-♭6-♭7
+                            <ul>
+                                <li>Nota característica: ♭2 (segunda menor)</li>
+                                <li>Se usa sobre: Im7</li>
+                                <li>Progresión ejemplo: Im7 - ♭IImaj7 - ♭VII7 - Im7</li>
+                                <li>La segunda menor en el ♭IImaj7 crea el "color" frigio</li>
+                            </ul>
+                        </li>
+                        <li><strong>Lidio</strong> - 1-2-3-#4-5-6-7
+                            <ul>
+                                <li>Nota característica: #4 (cuarta aumentada)</li>
+                                <li>Se usa sobre: Imaj7#4</li>
+                                <li>Progresión ejemplo: Imaj7#4 - II7 - VImaj7 - Imaj7#4</li>
+                                <li>La cuarta aumentada en el Imaj7#4 define el "color" lidio</li>
+                            </ul>
+                        </li>
+                        <li><strong>Mixolidio</strong> - 1-2-3-4-5-6-♭7
+                            <ul>
+                                <li>Nota característica: ♭7 (séptima menor)</li>
+                                <li>Se usa sobre: I7</li>
+                                <li>Progresión ejemplo: I7 - IVmaj7 - VIm7 - I7</li>
+                                <li>La séptima menor en el I7 da el "color" mixolidio</li>
+                            </ul>
+                        </li>
+                        <li><strong>Eólico (Escala Menor Natural)</strong> - 1-2-♭3-4-5-♭6-♭7
+                            <ul>
+                                <li>Nota característica: ♭6 (sexta menor)</li>
+                                <li>Se usa sobre: Im7</li>
+                                <li>Progresión ejemplo: Im7 - IVm7 - ♭VImaj7 - Im7</li>
+                                <li>La sexta menor en el ♭VImaj7 define el "color" eólico</li>
+                            </ul>
+                        </li>
+                        <li><strong>Locrio</strong> - 1-♭2-♭3-4-♭5-♭6-♭7
+                            <ul>
+                                <li>Nota característica: ♭5 (quinta disminuida)</li>
+                                <li>Se usa sobre: Im7♭5</li>
+                                <li>Progresión ejemplo: Im7♭5 - ♭IIm7 - ♭VII7 - Im7♭5</li>
+                                <li>La quinta disminuida en el Im7♭5 crea el "color" locrio</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="theory-tip">
+                        <strong>Tip:</strong> Para que un modo se perciba claramente, es fundamental:
+                        <ul>
+                            <li>Usar acordes que contengan la nota característica del modo</li>
+                            <li>Enfatizar la nota característica en la melodía</li>
+                            <li>Mantener la tónica como centro tonal</li>
+                            <li>Crear una progresión que establezca el modo como "hogar"</li>
+                </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="theory-example" id="reharmonizacion">
+                <h4>2. Sustituciones y Reharmonización</h4>
+                <p>La reharmonización es una técnica avanzada que permite crear variaciones interesantes en progresiones armónicas existentes. Estas técnicas son fundamentales en el jazz y la música moderna para crear sonoridades más ricas y complejas.</p>
+                
+                <div class="theory-example" id="dominantes-secundarias">
+                    <h4>3. Dominantes Secundarias</h4>
+                    <p>Los dominantes secundarios son acordes de séptima dominante que preceden a cualquier grado de la escala que no sea la tónica. Son una de las técnicas más comunes de reharmonización y se utilizan para crear tensión y resolución hacia acordes específicos.</p>
+            
+            <div class="theory-tip">
+                        <strong>Tip:</strong> Un dominante secundario se construye una quinta justa por encima del acorde al que resuelve. Por ejemplo, para resolver a Am7, usamos E7 (V7/vi).
+            </div>
+
+                    <p>Por ejemplo, en la tonalidad de C:</p>
+                    <ul>
+                        <li>Original: Cmaj7 - Am7 - Dm7 - G7</li>
+                        <li>Con dominantes secundarias: Cmaj7 - E7 - Am7 - A7 - Dm7 - G7</li>
+                    </ul>
+
+                    <p>Los dominantes secundarios más comunes son:</p>
+                    <ul>
+                        <li>V7/ii - Resuelve a ii</li>
+                        <li>V7/iii - Resuelve a iii</li>
+                        <li>V7/IV - Resuelve a IV</li>
+                        <li>V7/V - Resuelve a V</li>
+                        <li>V7/vi - Resuelve a vi</li>
+                        <li>V7/vii° - Resuelve a vii°</li>
+                    </ul>
+
+                    <div class="theory-tip">
+                        <strong>Tip:</strong> Algunos ejemplos prácticos de dominantes secundarias en C:
+                        <ul>
+                            <li>Para resolver a Dm7: A7 (V7/ii)</li>
+                            <li>Para resolver a Em7: B7 (V7/iii)</li>
+                            <li>Para resolver a Fmaj7: C7 (V7/IV)</li>
+                            <li>Para resolver a G7: D7 (V7/V)</li>
+                            <li>Para resolver a Am7: E7 (V7/vi)</li>
+                            <li>Para resolver a Bdim7: F#7 (V7/vii°)</li>
+                    </ul>
+                </div>
+
+                    <div class="theory-note">
+                        <strong>Nota:</strong> Los dominantes secundarios son especialmente efectivos para:
+                        <ul>
+                            <li>Crear tensión y resolución en puntos específicos de la progresión</li>
+                            <li>Enriquecer progresiones armónicas simples</li>
+                            <li>Agregar movimiento y dirección a la música</li>
+                            <li>Crear modulaciones temporales</li>
+                    </ul>
+                    </div>
+
+                    <div class="theory-warning">
+                        <strong>Importante:</strong> Al usar dominantes secundarias, es crucial mantener el centro tonal principal y asegurarse de que la resolución sea clara. No todos los acordes necesitan un dominante secundario.
+                    </div>
+                </div>
+
+                <div class="theory-example" id="sustitucion-tritonal">
+                    <h4>4. Sustitución Tritonal</h4>
+                    <p>La sustitución tritonal es una de las técnicas más comunes en jazz. Consiste en reemplazar un acorde de séptima dominante por otro que se encuentra a distancia de tritono (3 tonos).</p>
+                    
+                    <div class="theory-tip">
+                        <strong>Tip:</strong> El tritono es un intervalo de 3 tonos (6 semitonos). En un acorde de séptima dominante, la tercera y la séptima forman un tritono.
+                    </div>
+
+                    <p>Por ejemplo, en la progresión II-V-I en C:</p>
+                    <ul>
+                        <li>Original: Dm7 - G7 - Cmaj7</li>
+                        <li>Con sustitución tritonal: Dm7 - ♭D7 - Cmaj7</li>
+                    </ul>
+
+                    <p>La sustitución tritonal funciona porque:</p>
+                    <ul>
+                        <li>Mantiene la misma función de dominante</li>
+                        <li>Conserva la tercera y séptima del acorde original (que forman el tritono)</li>
+                        <li>Crea una resolución cromática más interesante</li>
+                    </ul>
+
+                    <div class="theory-tip">
+                        <strong>Tip:</strong> Algunos ejemplos comunes de sustitución tritonal:
+                        <ul>
+                            <li>G7 → ♭D7</li>
+                            <li>D7 → ♭A7</li>
+                            <li>A7 → ♭E7</li>
+                            <li>E7 → ♭B7</li>
+                        </ul>
+                    </div>
+
+                    <div class="theory-note">
+                        <strong>Nota:</strong> La sustitución tritonal es especialmente efectiva en progresiones II-V-I y en turnarounds. También se puede usar en secuencias de dominantes secundarios.
+                    </div>
+                </div>
+
+                <div class="theory-example" id="backdoor-dominante">
+                    <h4>5. Backdoor Dominante</h4>
+                    <p>El backdoor dominante es una técnica de reharmonización que consiste en reemplazar el V7 (dominante) por un ♭VII7 (séptima dominante de la subdominante) en una progresión que resuelve a un acorde mayor.</p>
+                    
+                    <div class="theory-tip">
+                        <strong>Tip:</strong> El backdoor dominante funciona porque el ♭VII7 comparte tres notas con el acorde de tónica mayor, creando una resolución suave y colorida.
+                    </div>
+
+                    <p>Por ejemplo, en la progresión II-V-I en C:</p>
+                    <ul>
+                        <li>Original: Dm7 - G7 - Cmaj7</li>
+                        <li>Con backdoor dominante: Dm7 - ♭B7 - Cmaj7</li>
+                    </ul>
+
+                    <p>El backdoor dominante funciona porque:</p>
+                    <ul>
+                        <li>El ♭VII7 contiene las notas ♭B - D - F - ♭A</li>
+                        <li>El Cmaj7 contiene las notas C - E - G - B</li>
+                        <li>Comparten las notas D y F, creando una resolución suave</li>
+                        <li>La nota ♭A resuelve a G, creando un movimiento de semitono</li>
+                    </ul>
+
+                    <div class="theory-tip">
+                        <strong>Tip:</strong> Algunos ejemplos comunes de backdoor dominante:
+                        <ul>
+                            <li>G7 → ♭B7 (en C)</li>
+                            <li>D7 → F7 (en G)</li>
+                            <li>A7 → C7 (en D)</li>
+                            <li>E7 → G7 (en A)</li>
+                        </ul>
+                    </div>
+
+                    <div class="theory-note">
+                        <strong>Nota:</strong> El backdoor dominante es especialmente efectivo en standards de jazz y música moderna. Se puede usar tanto en progresiones II-V-I como en turnarounds, y funciona mejor cuando resuelve a un acorde mayor.
+                    </div>
+                </div>
+
+                <div class="theory-example" id="coltrane-changes">
+                    <h4>6. Coltrane Changes</h4>
+                    <p>Los Coltrane Changes son una técnica de reharmonización que debe su nombre al legendario saxofonista John Coltrane, quien la popularizó en su composición "Giant Steps" (1959). Esta técnica revolucionó el jazz y se convirtió en un elemento fundamental del jazz moderno.</p>
+                    
+                    <div class="theory-tip">
+                        <strong>Tip:</strong> Los Coltrane Changes se basan en el movimiento por terceras mayores, creando una progresión que divide la octava en tres partes iguales.
+                    </div>
+
+                    <p>La progresión básica de Coltrane Changes en C:</p>
+                    <ul>
+                        <li>Original: Cmaj7 - Am7 - Dm7 - G7</li>
+                        <li>Con Coltrane Changes: Cmaj7 - E♭maj7 - A♭maj7 - Cmaj7</li>
+                    </ul>
+
+                    <p>Los Coltrane Changes funcionan porque:</p>
+                    <ul>
+                        <li>Movimiento por terceras mayores: C → E♭ → A♭ → C</li>
+                        <li>Cada acorde está a distancia de tercera mayor del anterior</li>
+                        <li>La progresión divide la octava en tres partes iguales</li>
+                        <li>Crea un movimiento armónico circular y simétrico</li>
+                    </ul>
+
+                    <div class="theory-tip">
+                        <strong>Tip:</strong> Algunos ejemplos de Coltrane Changes en diferentes tonalidades:
+                        <ul>
+                            <li>En G: Gmaj7 - B♭maj7 - E♭maj7 - Gmaj7</li>
+                            <li>En D: Dmaj7 - Fmaj7 - A♭maj7 - Dmaj7</li>
+                            <li>En A: Amaj7 - Cmaj7 - E♭maj7 - Amaj7</li>
+                        </ul>
+                    </div>
+
+                    <div class="theory-note">
+                        <strong>Nota histórica:</strong> John Coltrane desarrolló esta técnica mientras estudiaba el "Circle of Fifths" (Círculo de Quintas) y buscaba una forma de moverse más rápidamente entre tonalidades distantes. La progresión resultante se convirtió en un elemento característico de su estilo y ha influenciado a generaciones de músicos de jazz.
+                    </div>
+
+                    <div class="theory-warning">
+                        <strong>Importante:</strong> Los Coltrane Changes son una técnica avanzada que requiere un buen dominio de la teoría musical y la capacidad de improvisar en diferentes tonalidades. Es recomendable practicarlos gradualmente, empezando con progresiones más simples.
+                    </div>
+                </div>
+
+                <div class="theory-example" id="intercambio-modal">
+                    <h4>7. Intercambio Modal</h4>
+                    <p>El intercambio modal es una técnica de reharmonización que consiste en tomar acordes de modos paralelos (mismo tono fundamental) para crear colores armónicos más ricos y expresivos. Es especialmente útil para crear contrastes emocionales en la música.</p>
+                    
+                    <div class="theory-tip">
+                        <strong>Tip:</strong> Los modos paralelos son aquellos que comparten la misma tónica pero tienen diferentes cualidades (mayor/menor). Por ejemplo, C mayor y C menor son modos paralelos.
+                    </div>
+
+                    <p>Por ejemplo, en la tonalidad de C:</p>
+                    <ul>
+                        <li>Original: Cmaj7 - Am7 - Dm7 - G7</li>
+                        <li>Con intercambio modal: Cmaj7 - A♭m7 - D♭maj7 - G7</li>
+                    </ul>
+
+                    <p>Los acordes más comunes en intercambio modal son:</p>
+                    <ul>
+                        <li><strong>De modo menor a mayor:</strong>
+                            <ul>
+                                <li>♭III (bIII) - Tercera menor</li>
+                                <li>♭VI (bVI) - Sexta menor</li>
+                                <li>♭VII (bVII) - Séptima menor</li>
+                            </ul>
+                        </li>
+                        <li><strong>De modo mayor a menor:</strong>
+                            <ul>
+                                <li>III - Tercera mayor</li>
+                                <li>VI - Sexta mayor</li>
+                                <li>VII - Séptima mayor</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="theory-tip">
+                        <strong>Tip:</strong> Algunos ejemplos prácticos de intercambio modal:
+                        <ul>
+                            <li>En C mayor:
+                                <ul>
+                                    <li>I → Im7 (de modo menor)</li>
+                                    <li>IV → ivm7 (de modo menor)</li>
+                                    <li>V → v7 (de modo menor)</li>
+                                </ul>
+                            </li>
+                            <li>En C menor:
+                                <ul>
+                                    <li>i → Imaj7 (de modo mayor)</li>
+                                    <li>iv → IVmaj7 (de modo mayor)</li>
+                                    <li>v → V7 (de modo mayor)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="theory-note">
+                        <strong>Nota:</strong> El intercambio modal es especialmente efectivo para:
+                        <ul>
+                            <li>Crear contrastes emocionales en la música</li>
+                            <li>Enriquecer progresiones armónicas simples</li>
+                            <li>Agregar color y tensión a una composición</li>
+                            <li>Crear puentes entre secciones de una canción</li>
+                        </ul>
+                    </div>
+
+                    <div class="theory-warning">
+                        <strong>Importante:</strong> Al usar intercambio modal, es crucial mantener el centro tonal y asegurarse de que los acordes prestados funcionen musicalmente en el contexto. No todos los acordes de modos paralelos funcionarán bien en cualquier situación.
+                    </div>
+                </div>
+
+                <div class="theory-example" id="sustituciones-disminuidas">
+                    <h4>8. Sustituciones Disminuidas</h4>
+                    <p>Las sustituciones disminuidas son una técnica de reharmonización que utiliza acordes disminuidos para crear tensiones y resoluciones interesantes. Esta técnica es especialmente efectiva en jazz y música moderna.</p>
+                    
+                    <div class="theory-tip">
+                        <strong>Tip:</strong> Los acordes disminuidos son simétricos y pueden funcionar como dominantes sustitutos, ya que comparten notas con varios acordes de séptima dominante.
+                    </div>
+
+                    <p>Por ejemplo, en la tonalidad de C:</p>
+                    <ul>
+                        <li>Original: Cmaj7 - Am7 - Dm7 - G7</li>
+                        <li>Con sustitución disminuida: Cmaj7 - C#°7 - Dm7 - G7</li>
+                    </ul>
+
+                    <p>Las sustituciones disminuidas funcionan porque:</p>
+                    <ul>
+                        <li>Un acorde disminuido puede resolver a cuatro acordes diferentes</li>
+                        <li>Por ejemplo, C#°7 puede resolver a:
+                            <ul>
+                                <li>Dm7 (como V°7/ii)</li>
+                                <li>Fm7 (como V°7/iv)</li>
+                                <li>Abm7 (como V°7/♭vi)</li>
+                                <li>Bm7 (como V°7/vii)</li>
+                            </ul>
+                        </li>
+                        <li>Crean una tensión armónica que se resuelve de manera inesperada</li>
+                    </ul>
+
+                    <div class="theory-tip">
+                        <strong>Tip:</strong> Algunos ejemplos prácticos de sustituciones disminuidas:
+                        <ul>
+                            <li>En C:
+                                <ul>
+                                    <li>G7 → G#°7 (resuelve a Cmaj7)</li>
+                                    <li>Dm7 → D#°7 (resuelve a G7)</li>
+                                    <li>Am7 → A#°7 (resuelve a Dm7)</li>
+                                </ul>
+                            </li>
+                            <li>En G:
+                                <ul>
+                                    <li>D7 → D#°7 (resuelve a Gmaj7)</li>
+                                    <li>Em7 → F°7 (resuelve a A7)</li>
+                                    <li>Bm7 → C°7 (resuelve a Em7)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="theory-note">
+                        <strong>Nota:</strong> Las sustituciones disminuidas son especialmente efectivas para:
+                        <ul>
+                            <li>Crear tensiones armónicas interesantes</li>
+                            <li>Agregar color a progresiones simples</li>
+                            <li>Crear resoluciones inesperadas</li>
+                            <li>Enriquecer el movimiento armónico</li>
+                        </ul>
+                    </div>
+
+                    <div class="theory-warning">
+                        <strong>Importante:</strong> Al usar sustituciones disminuidas, es crucial entender que un mismo acorde disminuido puede resolver a varios acordes diferentes. La elección de la resolución dependerá del contexto musical y el efecto deseado.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Improvisación y Análisis -->
+        <section class="theory-section" id="improvisacion">
+            <h2>Improvisación y Análisis</h2>
+            
+            <div class="theory-example" id="standards">
+                <h4>1. Análisis de Standards</h4>
+                <p>El análisis de standards es una herramienta fundamental para entender la estructura de las canciones y desarrollar la capacidad de improvisar. Un buen análisis nos permite comprender la arquitectura musical y tomar decisiones informadas durante la improvisación.</p>
+            
+            <div class="theory-example">
+                    <h4>Forma de la Canción</h4>
+                    <p>La forma de una canción es su estructura básica, cómo se organizan sus secciones. En jazz, las formas más comunes son:</p>
+                    <ul>
+                        <li><strong>AABA (32 compases):</strong>
+                            <ul>
+                                <li>A: Tema principal (8 compases)</li>
+                                <li>A: Repetición del tema (8 compases)</li>
+                                <li>B: Puente o contraste (8 compases)</li>
+                                <li>A: Vuelta al tema (8 compases)</li>
+                            </ul>
+                            <p>Ejemplo: "Take the A Train" (Duke Ellington)</p>
+                        </li>
+                        <li><strong>ABAC (32 compases):</strong>
+                            <ul>
+                                <li>A: Tema principal (8 compases)</li>
+                                <li>B: Primer contraste (8 compases)</li>
+                                <li>A: Vuelta al tema (8 compases)</li>
+                                <li>C: Segundo contraste (8 compases)</li>
+                            </ul>
+                            <p>Ejemplo: "All the Things You Are" (Jerome Kern)</p>
+                        </li>
+                        <li><strong>Blues (12 compases):</strong>
+                            <ul>
+                                <li>I - I - I - I</li>
+                                <li>IV - IV - I - I</li>
+                                <li>V - IV - I - V</li>
+                            </ul>
+                            <p>Ejemplo: "Now's the Time" (Charlie Parker)</p>
+                        </li>
+                </ul>
+            </div>
+
+                <div class="theory-example">
+                    <h4>Centros Tonales</h4>
+                    <p>Los centros tonales son los puntos de referencia armónicos en una pieza musical. Identificarlos es crucial para la improvisación:</p>
+                    <ul>
+                        <li><strong>Tonalidad Principal:</strong> La tonalidad base de la canción</li>
+                        <li><strong>Modulaciones Temporales:</strong> Cambios temporales de tonalidad</li>
+                        <li><strong>Centros Modales:</strong> Áreas donde se establece un modo específico</li>
+                    </ul>
+                    
+                    <div class="theory-tip">
+                        <strong>Tip:</strong> Para identificar los centros tonales:
+                        <ul>
+                            <li>Busca acordes de tónica (Imaj7, Im7)</li>
+                            <li>Observa las cadencias (II-V-I)</li>
+                            <li>Identifica las modulaciones</li>
+                            <li>Reconoce los puntos de reposo armónico</li>
+                        </ul>
+                    </div>
+            </div>
+
+                <div class="theory-example">
+                    <h4>Modulaciones</h4>
+                    <p>Las modulaciones son cambios de tonalidad dentro de una pieza musical. En jazz, son comunes varios tipos:</p>
+                    <ul>
+                        <li><strong>Modulación Directa:</strong> Cambio inmediato de tonalidad</li>
+                        <li><strong>Modulación Pivot:</strong> Usando acordes comunes entre tonalidades</li>
+                        <li><strong>Modulación por Terceras:</strong> Movimiento por terceras mayores o menores</li>
+                        <li><strong>Modulación Cromática:</strong> Movimiento por semitonos</li>
+                    </ul>
+
+                    <div class="theory-tip">
+                        <strong>Tip:</strong> Al improvisar sobre modulaciones:
+                        <ul>
+                            <li>Identifica el acorde pivote</li>
+                            <li>Usa escalas apropiadas para cada tonalidad</li>
+                            <li>Enfatiza las notas guía de la nueva tonalidad</li>
+                            <li>Mantén la continuidad melódica</li>
+                        </ul>
+            </div>
+                </div>
+
+                <div class="theory-example">
+                    <h4>Puntos de Tensión y Resolución</h4>
+                    <p>La música jazz se basa en la creación y resolución de tensiones. Identificar estos puntos es esencial:</p>
+                    <ul>
+                        <li><strong>Puntos de Tensión:</strong>
+                            <ul>
+                                <li>Acordes de séptima dominante</li>
+                                <li>Notas de tensión (9, #11, 13)</li>
+                                <li>Acordes alterados</li>
+                                <li>Disonancias</li>
+                            </ul>
+                        </li>
+                        <li><strong>Puntos de Resolución:</strong>
+                            <ul>
+                                <li>Acordes de tónica</li>
+                                <li>Notas de reposo</li>
+                                <li>Consonancias</li>
+                                <li>Cadencia perfecta</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="theory-tip">
+                        <strong>Tip:</strong> Para crear líneas efectivas:
+                        <ul>
+                            <li>Enfatiza las tensiones en los acordes de dominante</li>
+                            <li>Resuelve las tensiones en los acordes de tónica</li>
+                            <li>Usa notas guía para conectar acordes</li>
+                            <li>Mantén el balance entre tensión y resolución</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="theory-example" id="tecnicas">
+                <h4>2. Técnicas de Improvisación</h4>
+                <p>La improvisación es el arte de crear música espontáneamente, basándose en el conocimiento teórico y la creatividad. Aquí presentamos técnicas fundamentales:</p>
+                
+                <div class="theory-example">
+                    <h4>Desarrollo de Frases</h4>
+                    <p>Una frase musical es como una oración: tiene un inicio, desarrollo y final. Para crear frases efectivas:</p>
+                    <ul>
+                        <li><strong>Estructura:</strong>
+                            <ul>
+                                <li>Inicio: Establece el carácter</li>
+                                <li>Desarrollo: Crea tensión</li>
+                                <li>Final: Resuelve la frase</li>
+                            </ul>
+                        </li>
+                        <li><strong>Elementos:</strong>
+                            <ul>
+                                <li>Rítmica: Variación y repetición</li>
+                                <li>Melódica: Movimiento y reposo</li>
+                                <li>Armónica: Tensión y resolución</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="theory-example">
+                    <h4>Uso de Escalas y Modos</h4>
+                    <p>La elección de escalas y modos es fundamental para el color de la improvisación:</p>
+                    <ul>
+                        <li><strong>Escalas Diatónicas:</strong>
+                            <ul>
+                                <li>Mayor y menor natural</li>
+                                <li>Modos de la escala mayor</li>
+                                <li>Escalas pentatónicas</li>
+                            </ul>
+                        </li>
+                        <li><strong>Escalas Alteradas:</strong>
+                            <ul>
+                                <li>Escala alterada</li>
+                                <li>Escala disminuida</li>
+                                <li>Escala de tonos enteros</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="theory-example">
+                    <h4>Desarrollo de Ideas</h4>
+                    <p>El desarrollo de ideas musicales es clave para crear solos coherentes:</p>
+                    <ul>
+                        <li><strong>Variación:</strong>
+                            <ul>
+                                <li>Cambio rítmico</li>
+                                <li>Inversión melódica</li>
+                                <li>Transposición</li>
+                            </ul>
+                        </li>
+                        <li><strong>Contraste:</strong>
+                            <ul>
+                                <li>Registro (agudo/grave)</li>
+                                <li>Densidad (notas/espacios)</li>
+                                <li>Carácter (tenso/relajado)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="theory-tip">
+                    <strong>Tip:</strong> Para mejorar la improvisación:
+                    <ul>
+                        <li>Practica con backing tracks</li>
+                        <li>Transcribe solos de tus músicos favoritos</li>
+                        <li>Desarrolla el oído relativo</li>
+                        <li>Estudia diferentes estilos y géneros</li>
+                    </ul>
+            </div>
+
+            <div class="theory-warning">
+                    <strong>Importante:</strong> La improvisación requiere tanto conocimiento teórico como práctica constante. No te desanimes si al principio es difícil. La clave está en la práctica regular y el estudio sistemático.
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-widget">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>Email: julianluchellifassa@gmail.com</li>
+                    <li>Teléfono: +54 2804713889</li>
+                </ul>
+            </div>
+            <div class="footer-widget">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="teoria.html">Teoría</a></li>
+                    <li><a href="ejercicios.html">Ejercicios</a></li>
+                    <li><a href="licks.html">Licks</a></li>
+                    <li><a href="covers.html">Covers</a></li>
+                </ul>
+            </div>
+            <div class="footer-widget">
+                <h3>Síguenos</h3>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Julian Luchelli Fassa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const intervals = document.querySelectorAll('.interval');
+            const notes = document.querySelectorAll('.note');
+
+            intervals.forEach(interval => {
+                interval.addEventListener('mouseover', function() {
+                    const note1 = this.getAttribute('data-note1');
+                    const note2 = this.getAttribute('data-note2');
+                    
+                    notes.forEach(note => {
+                        if (note.textContent === note1 || note.textContent === note2) {
+                            note.classList.add('highlighted');
+                        }
+                    });
+                });
+
+                interval.addEventListener('mouseout', function() {
+                    notes.forEach(note => {
+                        note.classList.remove('highlighted');
+                    });
+                });
+            });
+        });
+
+        // Script para el sidebar de navegación
+        document.addEventListener('DOMContentLoaded', function() {
+            // Función para desplazamiento suave
+            function smoothScroll(target) {
+                const element = document.querySelector(target);
+                if (element) {
+                    const headerOffset = 100;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            }
+
+            // Manejar clics en los enlaces del menú
+            document.querySelectorAll('.nav-sidebar a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = this.getAttribute('href');
+                    smoothScroll(target);
+                });
+            });
+
+            // Función para actualizar el enlace activo y mostrar/ocultar submenús
+            function updateActiveLink() {
+                const sections = document.querySelectorAll('.theory-section, .theory-example');
+                const navLinks = document.querySelectorAll('.nav-sidebar a');
+                const navItems = document.querySelectorAll('.nav-sidebar ul li');
+                
+                let currentSection = '';
+                let currentParentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                        currentSection = section.getAttribute('id');
+                        // Determinar la sección padre
+                        if (currentSection.includes('-')) {
+                            currentParentSection = currentSection.split('-')[0];
+                        } else {
+                            currentParentSection = currentSection;
+                        }
+                    }
+                });
+
+                // Remover clases activas
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Activar enlaces y elementos correspondientes
+                navLinks.forEach(link => {
+                    const href = link.getAttribute('href').substring(1);
+                    if (href === currentSection) {
+                        link.classList.add('active');
+                        // Activar el elemento padre si es una subsección
+                        const parentItem = link.closest('ul').parentElement;
+                        if (parentItem) {
+                            parentItem.classList.add('active');
+                        }
+                    }
+                });
+
+                // Activar elementos padre basados en la sección actual
+                navItems.forEach(item => {
+                    const link = item.querySelector('a');
+                    if (link) {
+                        const href = link.getAttribute('href').substring(1);
+                        if (href === currentParentSection) {
+                            item.classList.add('active');
+                        }
+                    }
+                });
+            }
+
+            // Actualizar enlaces activos al hacer scroll
+            window.addEventListener('scroll', updateActiveLink);
+            updateActiveLink(); // Actualizar al cargar la página
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licks - JLF Clases de Bajo Eléctrico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .licks-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .lick-section {
+            background: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .lick-section h2 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Syncopate', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .lick-section h3 {
+            color: #444;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .lick-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .lick-section ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .lick-section ul li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .lick-section ul li::before {
+            content: '•';
+            color: #32CD32;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .lick-example {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #32CD32;
+        }
+
+        .lick-note {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #ffc107;
+        }
+
+        .lick-tip {
+            background: #d4edda;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #28a745;
+        }
+
+        .lick-warning {
+            background: #f8d7da;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #dc3545;
+        }
+
+        .lick-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .lick-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .lick-card h4 {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .lick-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .lick-practice {
+            background: #e9ecef;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .lick-practice h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .lick-practice ol {
+            margin-left: 1.5rem;
+        }
+
+        .lick-practice li {
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .lick-resources {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .resource-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #32CD32;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .resource-link:hover {
+            background: #228B22;
+            transform: translateY(-2px);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            padding: 3rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-widget {
+            text-align: center;
+        }
+
+        .footer-widget h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-family: 'Syncopate', sans-serif;
+        }
+
+        .footer-widget ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-widget ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-widget ul li a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-widget ul li a:hover {
+            color: #32CD32;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>JLF CLASES DE BAJO ELÉCTRICO</h1>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="teoria.html">TEORÍA</a></li>
+                    <li><a href="ejercicios.html">EJERCICIOS</a></li>
+                    <li><a href="licks.html" class="active">LICKS</a></li>
+                    <li><a href="covers.html">COVERS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="licks-container">
+        <!-- Licks de Jazz -->
+        <section class="lick-section">
+            <h2>Licks de Jazz</h2>
+            
+            <h3>1. Licks Básicos de Jazz</h3>
+            <p>Los licks de jazz son frases musicales que caracterizan el estilo y la improvisación en el jazz.</p>
+            
+            <div class="lick-example">
+                <h4>Tipos de Licks:</h4>
+                <ul>
+                    <li>Licks basados en arpegios</li>
+                    <li>Licks modales</li>
+                    <li>Licks de bebop</li>
+                    <li>Licks de walking bass</li>
+                    <li>Licks de blues jazz</li>
+                </ul>
+            </div>
+
+            <h3>2. Progresiones Comunes</h3>
+            <p>Los licks de jazz se construyen sobre progresiones armónicas específicas.</p>
+            
+            <div class="lick-grid">
+                <div class="lick-card">
+                    <h4>Progresiones Básicas</h4>
+                    <ul>
+                        <li>ii-V-I</li>
+                        <li>I-vi-ii-V</li>
+                        <li>Rhythm changes</li>
+                        <li>Blues jazz</li>
+                    </ul>
+                </div>
+                <div class="lick-card">
+                    <h4>Progresiones Avanzadas</h4>
+                    <ul>
+                        <li>Coltrane changes</li>
+                        <li>Modal jazz</li>
+                        <li>Progresiones con sustituciones</li>
+                        <li>Progresiones con modulaciones</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lick-note">
+                <strong>Nota importante:</strong> La práctica de licks de jazz ayuda a desarrollar el vocabulario musical y la capacidad de improvisar.
+            </div>
+        </section>
+
+        <!-- Licks de Funk -->
+        <section class="lick-section">
+            <h2>Licks de Funk</h2>
+            
+            <h3>1. Licks de Slap</h3>
+            <p>El slap es una técnica característica del funk que produce un sonido percusivo y distintivo.</p>
+            
+            <div class="lick-example">
+                <h4>Elementos del Slap:</h4>
+                <ul>
+                    <li>Patrones de pulgar</li>
+                    <li>Combinaciones de slap y pull</li>
+                    <li>Patrones rítmicos</li>
+                    <li>Ejercicios de velocidad</li>
+                    <li>Variaciones de groove</li>
+                </ul>
+            </div>
+
+            <h3>2. Patrones de Groove</h3>
+            <p>El groove es el elemento fundamental del funk.</p>
+            
+            <div class="lick-tip">
+                <strong>Tip de Groove:</strong> El groove en funk se basa en la sincronización perfecta con el baterista.
+            </div>
+
+            <div class="lick-grid">
+                <div class="lick-card">
+                    <h4>Patrones Básicos</h4>
+                    <ul>
+                        <li>Patrones de octavas</li>
+                        <li>Patrones de quinta</li>
+                        <li>Patrones de escala</li>
+                        <li>Patrones de arpegio</li>
+                    </ul>
+                </div>
+                <div class="lick-card">
+                    <h4>Patrones Avanzados</h4>
+                    <ul>
+                        <li>Patrones de tres dedos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Licks de Rock -->
+        <section class="lick-section">
+            <h2>Licks de Rock</h2>
+            
+            <h3>1. Licks de Rock Clásico</h3>
+            <p>Los licks de rock clásico son la base de muchas canciones icónicas.</p>
+            
+            <div class="lick-example">
+                <h4>Tipos de Licks:</h4>
+                <ul>
+                    <li>Licks de pentatónica</li>
+                    <li>Licks de blues rock</li>
+                    <li>Licks de hard rock</li>
+                    <li>Licks de rock progresivo</li>
+                    <li>Licks de rock alternativo</li>
+                </ul>
+            </div>
+
+            <h3>2. Técnicas Específicas</h3>
+            <p>El rock utiliza diversas técnicas para crear sonidos distintivos.</p>
+            
+            <div class="lick-practice">
+                <h3>Ejercicios de Práctica</h3>
+                <ol>
+                    <li>Licks de pentatónica</li>
+                    <li>Licks de escala mayor</li>
+                    <li>Licks de escala menor</li>
+                    <li>Licks de blues</li>
+                    <li>Licks de rock clásico</li>
+                </ol>
+            </div>
+
+            <div class="lick-warning">
+                <strong>Importante:</strong> La práctica de licks de rock debe incluir tanto la técnica como el groove.
+            </div>
+        </section>
+
+        <!-- Recursos Adicionales -->
+        <section class="lick-section">
+            <h2>Recursos Adicionales</h2>
+            <p>Para mejorar tu repertorio de licks, te recomendamos los siguientes recursos:</p>
+            
+            <div class="lick-resources">
+                <a href="#" class="resource-link">Licks de Jazz</a>
+                <a href="#" class="resource-link">Licks de Funk</a>
+                <a href="#" class="resource-link">Licks de Rock</a>
+                <a href="#" class="resource-link">Backing Tracks</a>
+                <a href="#" class="resource-link">Tutoriales de Licks</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-widget">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>Email: julianluchellifassa@gmail.com</li>
+                    <li>Teléfono: +54 2804713889</li>
+                </ul>
+            </div>
+            <div class="footer-widget">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="teoria.html">Teoría</a></li>
+                    <li><a href="ejercicios.html">Ejercicios</a></li>
+                    <li><a href="licks.html">Licks</a></li>
+                    <li><a href="covers.html">Covers</a></li>
+                </ul>
+            </div>
+            <div class="footer-widget">
+                <h3>Síguenos</h3>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Julian Luchelli Fassa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html> 

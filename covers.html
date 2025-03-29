@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covers - JLF Clases de Bajo Eléctrico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .covers-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .cover-section {
+            background: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .cover-section h2 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Syncopate', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cover-section h3 {
+            color: #444;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cover-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .cover-section ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .cover-section ul li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .cover-section ul li::before {
+            content: '•';
+            color: #32CD32;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .cover-example {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #32CD32;
+        }
+
+        .cover-note {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #ffc107;
+        }
+
+        .cover-tip {
+            background: #d4edda;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #28a745;
+        }
+
+        .cover-warning {
+            background: #f8d7da;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #dc3545;
+        }
+
+        .cover-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .cover-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cover-card h4 {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cover-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .cover-practice {
+            background: #e9ecef;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .cover-practice h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .cover-practice ol {
+            margin-left: 1.5rem;
+        }
+
+        .cover-practice li {
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .cover-resources {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .resource-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #32CD32;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .resource-link:hover {
+            background: #228B22;
+            transform: translateY(-2px);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            padding: 3rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-widget {
+            text-align: center;
+        }
+
+        .footer-widget h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-family: 'Syncopate', sans-serif;
+        }
+
+        .footer-widget ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-widget ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-widget ul li a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-widget ul li a:hover {
+            color: #32CD32;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>JLF CLASES DE BAJO ELÉCTRICO</h1>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="teoria.html">TEORÍA</a></li>
+                    <li><a href="ejercicios.html">EJERCICIOS</a></li>
+                    <li><a href="licks.html">LICKS</a></li>
+                    <li><a href="covers.html" class="active">COVERS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="covers-container">
+        <!-- Covers de Jazz -->
+        <section class="cover-section">
+            <h2>Covers de Jazz</h2>
+            
+            <h3>1. Standards de Jazz</h3>
+            <p>Los standards de jazz son canciones fundamentales que todo bajista debe conocer.</p>
+            
+            <div class="cover-example">
+                <h4>Standards Básicos:</h4>
+                <ul>
+                    <li>Autumn Leaves</li>
+                    <li>All of Me</li>
+                    <li>Blue Bossa</li>
+                    <li>Take Five</li>
+                    <li>So What</li>
+                </ul>
+            </div>
+
+            <h3>2. Análisis de Standards</h3>
+            <p>El análisis de standards es fundamental para entender su estructura y poder improvisar.</p>
+            
+            <div class="cover-grid">
+                <div class="cover-card">
+                    <h4>Elementos a Analizar</h4>
+                    <ul>
+                        <li>Forma de la canción</li>
+                        <li>Progresiones armónicas</li>
+                        <li>Melodía principal</li>
+                        <li>Estilo y género</li>
+                    </ul>
+                </div>
+                <div class="cover-card">
+                    <h4>Técnicas de Interpretación</h4>
+                    <ul>
+                        <li>Walking bass</li>
+                        <li>Comping</li>
+                        <li>Solos</li>
+                        <li>Groove</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cover-note">
+                <strong>Nota importante:</strong> La práctica de standards es fundamental para desarrollar el vocabulario jazzístico.
+            </div>
+        </section>
+
+        <!-- Covers de Rock -->
+        <section class="cover-section">
+            <h2>Covers de Rock</h2>
+            
+            <h3>1. Canciones Clásicas</h3>
+            <p>El rock tiene una rica tradición de canciones icónicas con líneas de bajo memorables.</p>
+            
+            <div class="cover-example">
+                <h4>Ejemplos Clásicos:</h4>
+                <ul>
+                    <li>Another One Bites the Dust</li>
+                    <li>Come Together</li>
+                    <li>Seven Nation Army</li>
+                    <li>Under Pressure</li>
+                    <li>Feel Good Inc.</li>
+                </ul>
+            </div>
+
+            <h3>2. Técnicas de Rock</h3>
+            <p>El rock utiliza diversas técnicas específicas para crear sonidos distintivos.</p>
+            
+            <div class="cover-tip">
+                <strong>Tip de Rock:</strong> El groove y el timing son fundamentales en el rock.
+            </div>
+
+            <div class="cover-grid">
+                <div class="cover-card">
+                    <h4>Técnicas Básicas</h4>
+                    <ul>
+                        <li>Picking</li>
+                        <li>Fingerstyle</li>
+                        <li>Palm muting</li>
+                        <li>Ghost notes</li>
+                    </ul>
+                </div>
+                <div class="cover-card">
+                    <h4>Técnicas Avanzadas</h4>
+                    <ul>
+                        <li>Slap</li>
+                        <li>Tapping</li>
+                        <li>Harmonics</li>
+                        <li>Effects</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Covers de Funk -->
+        <section class="cover-section">
+            <h2>Covers de Funk</h2>
+            
+            <h3>1. Canciones de Funk</h3>
+            <p>El funk es conocido por sus líneas de bajo groovy y técnicas distintivas.</p>
+            
+            <div class="cover-example">
+                <h4>Ejemplos de Funk:</h4>
+                <ul>
+                    <li>Give Up the Funk</li>
+                    <li>Get Up (I Feel Like Being a) Sex Machine</li>
+                    <li>Super Freak</li>
+                    <li>Brick House</li>
+                    <li>Play That Funky Music</li>
+                </ul>
+            </div>
+
+            <h3>2. Técnicas de Funk</h3>
+            <p>El funk requiere técnicas específicas para lograr su sonido característico.</p>
+            
+            <div class="cover-practice">
+                <h3>Ejercicios de Práctica</h3>
+                <ol>
+                    <li>Patrones de slap</li>
+                    <li>Groove de funk</li>
+                    <li>Ghost notes</li>
+                    <li>Octavas</li>
+                    <li>Combinaciones rítmicas</li>
+                </ol>
+            </div>
+
+            <div class="cover-warning">
+                <strong>Importante:</strong> El groove es el elemento más importante en el funk.
+            </div>
+        </section>
+
+        <!-- Recursos Adicionales -->
+        <section class="cover-section">
+            <h2>Recursos Adicionales</h2>
+            <p>Para mejorar tu repertorio de covers, te recomendamos los siguientes recursos:</p>
+            
+            <div class="cover-resources">
+                <a href="#" class="resource-link">Partituras de Jazz</a>
+                <a href="#" class="resource-link">Partituras de Rock</a>
+                <a href="#" class="resource-link">Partituras de Funk</a>
+                <a href="#" class="resource-link">Backing Tracks</a>
+                <a href="#" class="resource-link">Tutoriales de Covers</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-widget">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>Email: julianluchellifassa@gmail.com</li>
+                    <li>Teléfono: +54 2804713889</li>
+                </ul>
+            </div>
+            <div class="footer-widget">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="teoria.html">Teoría</a></li>
+                    <li><a href="ejercicios.html">Ejercicios</a></li>
+                    <li><a href="licks.html">Licks</a></li>
+                    <li><a href="covers.html">Covers</a></li>
+                </ul>
+            </div>
+            <div class="footer-widget">
+                <h3>Síguenos</h3>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Julian Luchelli Fassa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html> 
